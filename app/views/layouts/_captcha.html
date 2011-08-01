@@ -1,0 +1,7 @@
+<div id="captcha">
+  <% images.each_with_index do |image, index| %>
+    <input type="checkbox" id="button_<%= index %>" value="<%= image[1] %>" name="post[captcha][]" style="display:none;" />
+    <% session[:captcha] << image[1] %>
+    <label for="button_<%= index %>"><img src="<%= image[0] %>" /></label>
+  <% end %>  
+</div>
